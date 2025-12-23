@@ -28,23 +28,33 @@ export const UserCalculator: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [units, setUnits] = useState(0);
 
-  const getBill = async (data: FormData) => {
-    setLoading(true);
-    setError(null);
-    try {
-  const res = await axios.post<Bill>(
-  `${process.env.REACT_APP_BACKEND_URL}/config/bill/calculate`,
-  { name: data.name, units: data.units }  
-);
-      setBill(res.data);
-      setName(data.name);
-      setUnits(data.units);
-      reset();
-    } catch (err) {
-      setError('Failed to calculate bill. Try again.');
-    }
-    setLoading(false);
-  };
+const getBill = async (data: FormData) => {
+  setLoading(true);
+  setError(null);
+  try {
+    
+    console.log('DEBUG: Backend URL is:', process.env.REACT_APP_BACKEND_URL);
+    console.log('DEBUG: Calling URL:', `${process.env.REACT_APP_BACKEND_URL}/config/bill/calculate`);
+    
+    const res = await axios.post<Bill>(
+      `${process.env.REACT_APP_BACKEND_URL}/config/bill/calculate`,
+      { name: data.name, units: data.units }  
+    );
+    
+    console.log('DEBUG: Response received:', res.data);
+    
+    setBill(res.data);
+    setName(data.name);
+    setUnits(data.units);
+    reset();
+  } catch (err) {
+    console.error('DEBUG: Error details:', err);
+    setError('Failed to calculate bill. Try again.');
+  }
+  setLoading(false);
+};
+
+  
 
   {/* display of pdf */}
   const downloadPDF = () => {
