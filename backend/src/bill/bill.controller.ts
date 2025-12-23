@@ -9,6 +9,6 @@ export class BillController {
   @Post('calculate')
   @UsePipes(new ValidationPipe({ whitelist: true, transform: true }))
   async calculate(@Body() dto: CalculateBillDto) {
-    return this.billService.calculateBill(dto.units);
+    return this.billService.calculateBill(dto.units,dto.name);
   }
 }
