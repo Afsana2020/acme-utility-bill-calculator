@@ -5,6 +5,7 @@ import { jsPDF } from 'jspdf';
 import { TextField, Button, Typography, Paper, Box, Divider, Alert } from '@mui/material';
 
 interface Bill {
+  customerName: string;
   units: number;
   rate: number;
   subtotal: number;
@@ -31,10 +32,10 @@ export const UserCalculator: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.post<Bill>(
-        `${process.env.REACT_APP_BACKEND_URL}/config/bill/calculate`,
-        { units: data.units }
-      );
+  const res = await axios.post<Bill>(
+  `${process.env.REACT_APP_BACKEND_URL}/config/bill/calculate`,
+  { name: data.name, units: data.units }  
+);
       setBill(res.data);
       setName(data.name);
       setUnits(data.units);
