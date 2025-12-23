@@ -8,6 +8,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:3000',
+      'http://localhost:3001',
       'https://ah-utility-bill-calculator.vercel.app/' 
     ],
     credentials: true,
