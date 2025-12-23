@@ -32,7 +32,7 @@ export const UserCalculator: React.FC = () => {
     setError(null);
     try {
       const res = await axios.post<Bill>(
-        `${process.env.REACT_APP_BACKEND_URL}/bill/calculate`,
+        `${process.env.REACT_APP_BACKEND_URL}/config/bill/calculate`,
         { units: data.units }
       );
       setBill(res.data);
