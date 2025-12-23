@@ -209,9 +209,27 @@ export const UserCalculator: React.FC = () => {
                 <Typography variant="h6" sx={{ color: 'green', fontWeight: 'bold' }}>{bill.total.toFixed(2)}</Typography>
               </Box>
 
-              <Button variant="contained" color="primary" onClick={downloadPDF} fullWidth sx={{ mt: 3 }}>
-                Download as PDF
-              </Button>
+            
+                  <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={downloadPDF} 
+                    fullWidth 
+                    sx={{ mt: 2 }}
+                  >
+                    Download as PDF
+                  </Button>
+                  
+              <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={() => setBill(null)} 
+                    fullWidth 
+                    sx={{ mt: 3 }}
+                  >
+                    Back
+                  </Button>
+
             </Box>
           </Box>
         </Paper>
