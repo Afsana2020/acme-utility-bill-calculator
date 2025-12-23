@@ -56,7 +56,10 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onLogin, isLoggedIn }) =
 
     // update rate per unit
   const saveRate = async () => {
-    if (!newRate || isNaN(Number(newRate))) return;
+    if (!newRate || isNaN(Number(newRate))) {
+      setError('Please enter a valid number for rate');
+      return;
+    }
     
     setSaving('rate');
     try {
@@ -70,15 +73,25 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onLogin, isLoggedIn }) =
       setEditRate(false);
       setNewRate('');
       setTimeout(() => setOk(false), 2000);
-    } catch (err) {
-      setError('Failed');
+    } catch (err: any) {
+      // backend validation error if available
+      if (err.response?.data?.message) {
+        setError(err.response.data.message);
+      } else if (err.response?.data?.error) {
+        setError(err.response.data.error);
+      } else {
+        setError('Failed to update rate');
+      }
     }
     setSaving('');
   };
 
   //to update vat percentage
   const saveVat = async () => {
-    if (!newVat || isNaN(Number(newVat))) return;
+    if (!newVat || isNaN(Number(newVat))) {
+      setError('Please enter a valid number for VAT');
+      return;
+    }
     
     setSaving('vat');
     try {
@@ -92,15 +105,25 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onLogin, isLoggedIn }) =
       setEditVat(false);
       setNewVat('');
       setTimeout(() => setOk(false), 2000);
-    } catch (err) {
-      setError('Failed');
+    } catch (err: any) {
+      // backend validation error
+      if (err.response?.data?.message?.includes('vat_percentage')) {
+        setError('VAT must be between 0 and 100%');
+      } else if (err.response?.data?.message) {
+        setError(err.response.data.message);
+      } else {
+        setError('Failed to update VAT');
+      }
     }
     setSaving('');
   };
 
   //to update fixed service charge
   const saveService = async () => {
-    if (!newService || isNaN(Number(newService))) return;
+    if (!newService || isNaN(Number(newService))) {
+      setError('Please enter a valid number for service charge');
+      return;
+    }
     
     setSaving('service');
     try {
@@ -114,8 +137,15 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onLogin, isLoggedIn }) =
       setEditService(false);
       setNewService('');
       setTimeout(() => setOk(false), 2000);
-    } catch (err) {
-      setError('Failed');
+    } catch (err: any) {
+      // backend validation error
+      if (err.response?.data?.message?.includes('fixed_service_charge')) {
+        setError('Service charge cannot be negative');
+      } else if (err.response?.data?.message) {
+        setError(err.response.data.message);
+      } else {
+        setError('Failed to update service charge');
+      }
     }
     setSaving('');
   };
