@@ -1,4 +1,4 @@
-![us1](https://github.com/user-attachments/assets/f7534d5a-1b78-4566-8e98-918d7acf597b)#  A.H. Electricity- Utility Bill Calculator
+#  A.H. Electricity- Utility Bill Calculator
 
 A full-stack web app for calculating electricity utility bills with admin-configurable rates and bills can be printed as PDF.
 
