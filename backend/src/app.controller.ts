@@ -17,7 +17,7 @@ export class AppController {
           example: 'GET /api/config'
         },
         {
-          method: 'POST', 
+          method: 'POST',
           path: '/api/config',
           description: 'Update configuration (admin only)',
           example: 'POST /api/config with JSON body',
@@ -27,7 +27,7 @@ export class AppController {
           method: 'POST',
           path: '/api/bill',
           description: 'Calculate utility bill',
-          example: 'POST /api/calculate with {"units": 150}',
+          example: 'POST /api/bill with {"units": 150}',
           response: 'Returns bill breakdown with PDF download link'
         }
       ],
