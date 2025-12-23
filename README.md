@@ -2,8 +2,9 @@
 
 A full-stack web app for calculating utility bills with admin-configurable rates.
 
-## Live Demo
-- [https://ah-utility-bill-calculator.vercel.app/](https://ah-utility-bill-calculator.vercel.app/)
+## Live Demo:
+- Frontend (Actual Implementation): [https://ah-utility-bill-calculator.vercel.app/](https://ah-utility-bill-calculator.vercel.app/)
+- Backend (API Endpoint Logic): [https://acme-utility-bill-calculator-backend.onrender.com/](https://acme-utility-bill-calculator-backend.onrender.com/)
 
 
 ## Features
