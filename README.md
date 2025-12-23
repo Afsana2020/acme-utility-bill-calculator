@@ -1,6 +1,6 @@
 #  A.H. Electricity- Utility Bill Calculator
 
-A full-stack web app for calculating electricity utility bills with admin-configurable rates and bills can be printed as PDF.
+A full-stack web app for calculating electricity utility bills with admin-configurable rates, where bills can be printed as PDF.
 
 ## Live Demo:
 - Frontend (Actual Implementation): [https://ah-utility-bill-calculator.vercel.app/](https://ah-utility-bill-calculator.vercel.app/)
