@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from './config/config.module';
 import { BillModule } from './bill/bill.module';
+import { PingController } from './ping.controller';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { BillModule } from './bill/bill.module';
     ConfigModule,
     BillModule, 
   ],
-  controllers: [AppController],
+  controllers: [AppController,PingController],
   providers: [AppService],
 })
 export class AppModule {}
