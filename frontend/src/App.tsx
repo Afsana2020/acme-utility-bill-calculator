@@ -102,9 +102,8 @@ function App() {
         </Toolbar>
       </AppBar>
 
-      {/* Small loading note */}
       <Box sx={{
-        bgcolor: '#e3f2fd',
+        bgcolor: 'white',
         color: '#1565c0',
         textAlign: 'center',
         py: 1,
