@@ -6,6 +6,8 @@ A full-stack web app for calculating electricity utility bills with admin-config
 - Frontend (Actual Implementation): [https://ah-utility-bill-calculator.vercel.app/](https://ah-utility-bill-calculator.vercel.app/)
 - Backend (API Endpoint Logic): [https://acme-utility-bill-calculator-backend.onrender.com/](https://acme-utility-bill-calculator-backend.onrender.com/)
 
+  ####     Note: First load may take a bit longer as the app is deployed using Render's free tier. Thank you for your patience!
+
 
 ## Features
 - **Admin Panel:** Update rates, VAT, and service charge (PIN protected)
