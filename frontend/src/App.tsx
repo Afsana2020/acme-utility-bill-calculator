@@ -102,18 +102,6 @@ function App() {
         </Toolbar>
       </AppBar>
 
-      <Box sx={{
-        bgcolor: '#e3f2fd',
-        color: '#1565c0',
-        textAlign: 'center',
-        py: 0.7,
-        fontSize: '0.5rem'
-      }}>
-        <Typography variant="body2">
-    Note: First load may take a bit longer as the app is deployed using Render's free tier. Thank you for your patience!
-        </Typography>
-      </Box>
-
       <Box sx={{ flex: 1, p: 4 }}>
         {adminView ? (
           <AdminPanel
