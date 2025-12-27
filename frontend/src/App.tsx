@@ -103,11 +103,11 @@ function App() {
       </AppBar>
 
       <Box sx={{
-        bgcolor: 'white',
-        color: '#1565c0',
+        bgcolor: '#e3f2fd',
+        color: 'white',
         textAlign: 'center',
         py: 1,
-        fontSize: '0.875rem'
+        fontSize: '0.6rem'
       }}>
         <Typography variant="body2">
     Note: First load may take a bit longer as the app is deployed using Render's free tier. Thank you for your patience!
