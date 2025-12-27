@@ -32,30 +32,29 @@ function App() {
   };
 
   return (
-    <Box sx={{ 
-      minHeight: '100vh', 
-      bgcolor: '#fff', 
-      display: 'flex', 
-      flexDirection: 'column' 
+    <Box sx={{
+      minHeight: '100vh',
+      bgcolor: '#fff',
+      display: 'flex',
+      flexDirection: 'column'
     }}>
-
       {/* navbar */}
       <AppBar position="static" sx={{ bgcolor: '#1e88e5' }}>
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 500 }}>
-           A.H. Electricity
+            A.H. Electricity
           </Typography>
-          
+         
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             {adminLoggedIn && (
               <Button
                 variant="contained"
                 onClick={handleLogout}
                 sx={{
-                  bgcolor: '#d32f2f',   
+                  bgcolor: '#d32f2f',
                   color: 'white',
                   '&:hover': {
-                    bgcolor: '#b71c1c' 
+                    bgcolor: '#b71c1c'
                   },
                   fontWeight: 600,
                   textTransform: 'none',
@@ -64,9 +63,8 @@ function App() {
               >
                 Logout
               </Button>
-
             )}
-            
+           
             <Button
               variant={adminView ? "outlined" : "contained"}
               onClick={() => setAdminView(false)}
@@ -83,7 +81,7 @@ function App() {
             >
               Bill Calculate
             </Button>
-            
+           
             <Button
               variant={adminView ? "contained" : "outlined"}
               onClick={() => setAdminView(true)}
@@ -104,10 +102,23 @@ function App() {
         </Toolbar>
       </AppBar>
 
+      {/* Small loading note */}
+      <Box sx={{
+        bgcolor: '#e3f2fd',
+        color: '#1565c0',
+        textAlign: 'center',
+        py: 1,
+        fontSize: '0.875rem'
+      }}>
+        <Typography variant="body2">
+          Note: First load may take a few seconds as the app is hosted on Vercel's free tier. Thank you for your patience!
+        </Typography>
+      </Box>
+
       <Box sx={{ flex: 1, p: 4 }}>
         {adminView ? (
-          <AdminPanel 
-            onLogin={handleLogin} 
+          <AdminPanel
+            onLogin={handleLogin}
             isLoggedIn={adminLoggedIn}
           />
         ) : (
@@ -115,12 +126,12 @@ function App() {
         )}
       </Box>
 
-{/*footer*/}
-      <Box sx={{ 
-        bgcolor: '#1e88e5', 
-        color: 'white', 
-        textAlign: 'center', 
-        py: 2 
+      {/* footer */}
+      <Box sx={{
+        bgcolor: '#1e88e5',
+        color: 'white',
+        textAlign: 'center',
+        py: 2
       }}>
         <Typography variant="body2">
           © 2025 AH. All rights reserved.
