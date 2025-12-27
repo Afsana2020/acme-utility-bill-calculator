@@ -111,7 +111,7 @@ function App() {
         fontSize: '0.875rem'
       }}>
         <Typography variant="body2">
-          Note: First load may take a few seconds as the app is hosted on Vercel's free tier. Thank you for your patience!
+    Note: First load may take a bit longer as the app is deployed using Render's free tier. Thank you for your patience!
         </Typography>
       </Box>
 
